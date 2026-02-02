@@ -1,10 +1,10 @@
 [Unit]
-Description=Waydroid Container
+Description=Waydroid Container on instance %i
 
 [Service]
 UMask=0022
-BusName=id.waydro.Container
-ExecStart=/usr/bin/waydroid -w container start
+BusName=id.waydro.Container.%i
+ExecStart=/usr/bin/waydroid -w -n '%i' container start
 
 [Install]
 WantedBy=multi-user.target
